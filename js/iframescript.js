@@ -3,5 +3,5 @@ var width = 650,
 
 var scale = 24000;
 var yaw = -86.9;
-var pitch = 10.97 ;
+var pitch = 11.2 ;
 var roll = 0;
