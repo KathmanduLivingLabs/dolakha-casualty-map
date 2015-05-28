@@ -109,8 +109,8 @@ function tooltip(d) {
   var district = d.properties.vdc_name;
   var deadpercent = d.properties.deadpercent;
   var injuredpercent = d.properties.injuredpercent;
-  var completehouse = d.properties.OthComplete;
-  var partialhouse = d.properties.OthPartial;
+  //var completehouse = d.properties.OthComplete;
+  //var partialhouse = d.properties.OthPartial;
   var completehouse = d.properties.GovComplete;
   var partialhouse = d.properties.GovPartial;
 
