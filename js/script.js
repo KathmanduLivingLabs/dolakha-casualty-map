@@ -106,7 +106,7 @@ function ready(error, districts_topo) {
 function tooltip(d) {
   var dead = d.properties.dead;
   var injured = d.properties.injured;
-  var district = d.properties.vdc_name;
+  var district = d.properties.district;
   var deadpercent = d.properties.deadpercent;
   var injuredpercent = d.properties.injuredpercent;
   //var completehouse = d.properties.OthComplete;
