@@ -106,11 +106,14 @@ function ready(error, districts_topo) {
 function tooltip(d) {
   var dead = d.properties.dead;
   var injured = d.properties.injured;
-  var district = d.properties.district;
+  var district = d.properties.vdc_name;
   var deadpercent = d.properties.deadpercent;
   var injuredpercent = d.properties.injuredpercent;
   var completehouse = d.properties.OthComplete;
   var partialhouse = d.properties.OthPartial;
+  var completehouse = d.properties.GovComplete;
+  var partialhouse = d.properties.GovPartial;
+
 
   if (m === 0 || m === 2) {
     var tip1 = "Total dead: " + numberWithCommas(dead);
