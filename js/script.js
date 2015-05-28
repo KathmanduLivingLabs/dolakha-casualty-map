@@ -9,7 +9,7 @@ var tipWidth = 150,
 
 // Ramp paraemters, first for dead, then for injuries
 var rampameters = [
-  [0,1,5,10,15,20,23], //deaths
+  [0,1,5,10,15,20,25], //deaths
   [0,0.001,0.01,0.05,0.1,0.3,5], //percentage killed
   [0,50,100,500,1000,2000,10000], //injuries
   [0,0.001,0.05,0.1,0.3,0.5,5], //percentage injured
