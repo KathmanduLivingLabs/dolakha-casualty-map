@@ -1,6 +1,6 @@
 ## About
 
-This map show Casualties from the April 25th earthquake in Nepal. Casualty data can be found [here](https://docs.google.com/spreadsheets/d/1Q3QSx1_p78T4_qo_JVj5vEQtzuCFWP2AfxYnVBSNzLQ/pubhtml), Population data from [Nepal Census 2011](http://cbs.gov.np/atlas/tables.html?chapter=2&table=2.1). 
+This map show Casualties in Dolakha district from the April 25th earthquake in Nepal. Casualty data can be found [here](https://docs.google.com/spreadsheets/d/1qnsJw_UkYDy_fswUYgaQyb4sD76xIN_T7Qi97Rnq2-Y/pubhtml?gid=787276582&single=true). 
 
 This app frame is built using the [Foundation](http://foundation.zurb.com/) responsive framework and jeykll pages.
 
@@ -27,7 +27,7 @@ This app frame is built using the [Foundation](http://foundation.zurb.com/) resp
 6. Export `casualty and population` as a csv named same as above: `nepal_quake_YY_MM_DD_HH`. Place in the /data/
 7. Run topojson in your /data/ folder using the following script, inputting your csv name as shown:
 
-	topojson -o districts_topo.json --id-property 'distID, distID' --external-properties=casualty_YY_MM_DD_HH.csv --properties='district=district' --properties='dead=dead' --properties='injured=injured' --properties='GovComplete=GovComplete' --properties='GovPartial=GovPartial' --properties='OthComplete=OthComplete' --properties='OthPartial=OthPartial' --properties='population=population' --properties='deadpercent=deadpercent' --properties='injuredpercent=injuredpercent' -- districts_id.json;
+	topojson -o districts_topo.json --id-property 'vcode, vcode' --external-properties=data.csv --properties='district=vdc_name' --properties='dead=dead' --properties='injured=injured' --properties='GovComplete=GovComplete' --properties='GovPartial=GovPartial' --properties='OthComplete=OthComplete' --properties='OthPartial=OthPartial' --properties='population=population' --properties='deadpercent=deadpercent' --properties='injuredpercent=injuredpercent' -- vdcs.geojson;
 
 8. Update date in index.html, iframe.html (2 places on each page)
 9. Update casualty totals in index.html, iframe.html 

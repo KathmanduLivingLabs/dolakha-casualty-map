@@ -31,14 +31,14 @@ fs.readFile(filename, {
 });
 }
 
-request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-CxKEySFQ2W2CgA/export?format=csv&gid=1901101589", function(error, response, data){
+request("https://docs.google.com/spreadsheets/d/1qnsJw_UkYDy_fswUYgaQyb4sD76xIN_T7Qi97Rnq2-Y/export?gid=528772735&format=csv", function(error, response, data){
     if (error || response.statusCode !== 200) return "error: "+ response.statusCode;
     var csvLinesArray = data.trim().replace(/\"/g,"").split("\n");
-    var line8 = csvLinesArray[8].split(",");
+    csvLine = csvLinesArray[1].split(",");
     updateTimestamp = {
-        "update-date": csvLinesArray[1].split(",")[2].split("-")[1].replace("AM","NST").replace("PM","NST"),
-        "lost": line8[4]+","+line8[5],
-        "injured": line8[6]+","+line8[7]
+        "update-date": csvLine[0].replace("AM","NST").replace("PM","NST"),
+        "lost": csvLine[1],
+        "injured": csvLine[2]
     };
 
 
@@ -46,15 +46,16 @@ request("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-Cx
     updateFile("../iframe.html");
 
     var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+".csv";
-    
-    fs.writeFile(archiveFilename, data, function(err){
-        if(err) throw err;
-        console.log("data archived in "+ archiveFilename);
-    });
+
+    request
+  .get("https://docs.google.com/spreadsheets/d/1qnsJw_UkYDy_fswUYgaQyb4sD76xIN_T7Qi97Rnq2-Y/export?gid=787276582&format=csv")
+  .on('error', function(err) {
+    console.log(err)
+  }).pipe(fs.createWriteStream(archiveFilename));
 });
 
 request
-  .get("https://docs.google.com/spreadsheets/d/1tGQlS3lIW077sOUIJ1qO0Rtaz34V-CxKEySFQ2W2CgA/export?format=csv&gid=504630038")
+  .get("https://docs.google.com/spreadsheets/d/1qnsJw_UkYDy_fswUYgaQyb4sD76xIN_T7Qi97Rnq2-Y/export?gid=933548789&format=csv")
   .on('error', function(err) {
     console.log(err)
   }).pipe(fs.createWriteStream("data.csv"));
