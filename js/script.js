@@ -77,9 +77,9 @@ queue()
 
 function ready(error, districts_topo) {
   svg.append("g")
-      .attr("class", "districts_id")
+      .attr("class", "vdcs")
     .selectAll("path")
-      .data(topojson.feature(districts_topo, districts_topo.objects.districts_id).features)
+      .data(topojson.feature(districts_topo, districts_topo.objects.vdcs).features)
     .enter().append("path")
       .attr("class", function(d) { 
         return ramp(d,m)
@@ -91,13 +91,13 @@ function ready(error, districts_topo) {
 
 // Draw the state borders
   svg.append("path")
-      .datum(topojson.mesh(districts_topo, districts_topo.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo, districts_topo.objects.vdcs, function(a, b) { 
         return a !== b; }))
       .attr("class", "states")
       .attr("d", path)
 
     svg.append("path")
-      .datum(topojson.mesh(districts_topo, districts_topo.objects.districts_id, function(a, b) { 
+      .datum(topojson.mesh(districts_topo, districts_topo.objects.vdcs, function(a, b) { 
         return a == b; }))
       .attr("class", "country")
       .attr("d", path)      
@@ -204,7 +204,7 @@ function remover() {
 }
 
 function rebuild() {
-  d3.selectAll(".districts_id").remove();
+  d3.selectAll(".vdcs").remove();
   d3.selectAll(".country").remove();
   d3.selectAll(".states").remove();
   queue()
