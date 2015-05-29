@@ -43,6 +43,7 @@ request("https://docs.google.com/spreadsheets/d/1qnsJw_UkYDy_fswUYgaQyb4sD76xIN_
 
 
     updateFile("../index.html");
+    updateFile("../iframe-full-width.html");
     updateFile("../iframe.html");
 
     var archiveFilename = "data-"+updateTimestamp["update-date"].replace(/:/g,".").replace(/ /g,"-")+".csv";
