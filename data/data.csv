@@ -1,4 +1,4 @@
-vcode,vdc_name,total_population,dead,injured,deadpercent,injurypercent,GovComplete,GovPartial
+vcode,vdc_name,total_population,dead,injured,deadpercent,injuredpercent,GovComplete,GovPartial
 220001,Alampu,1803,7,7,0.39,0.39,,
 220002,Babare,"3,533",2,10,0.06,0.28,,
 220003,Bhedapu,"3,705",1,3,0.03,0.08,,
