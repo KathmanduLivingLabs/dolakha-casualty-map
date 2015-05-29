@@ -11,7 +11,7 @@ var tipWidth = 150,
 var rampameters = [
   [0,1,5,10,15,20,25], //deaths
   [0,0.001,0.01,0.05,0.1,0.3,5], //percentage killed
-  [0,1,15,50,100,150,500], //injuries
+  [0,1,10,30,50,100,500], //injuries
   [0,0.001,0.05,0.1,0.3,0.5,5], //percentage injured
   [0,100,500,1000,7500,20000,100000], //Complete houses
   [0,100,500,1000,7500,20000,100000] //partial houses
